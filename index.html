@@ -17,24 +17,28 @@ button {
 </head>
 <body>
     <h1>Notify.js demo</h1>
-    <p>Notify.js is a simple wrapper for the Web Notification API. The GitHub repo is <a href="https://github.com/alexgibson/notify.js">here</a>.</p>
-    <p>Click the button below to fire up a notification. Currently supported in Chrome, Safari, Firefox and Firefox OS.</p>
-    <button id="my-button">Notify Me!</button>
-
-    <!-- JavaScript assets -->
+    
     
     <script>
 
+        //var audio = new Audio('https://psv4.vk.me/c5064/u5740360/audios/fbcb0a738981.mp3?extra=aPyZm1_7uVmTXs4zdaSuJz6m4mlb0Wvg1Hpjk8iR3wH6zkrazrGgTq1ZT4gZhxvOPkMGbw4wBop2JtETK5GAMzwCHjo1AnAeew');
+
+        var audio = new Audio("data:audio/wav;base64,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");
+
+
         function onShowNotification () {
             console.log('notification is shown!');
+            audio.play();
         }
 
         function onCloseNotification () {
             console.log('notification is closed!');
+            audio.pause();
         }
 
-        function onClickNotification () {
-            console.log('notification was clicked!');
+        function onClickNotification (e) {
+            window.focus(); 
+            console.log('notification was clicked!', e);
         }
 
         function onErrorNotification () {
